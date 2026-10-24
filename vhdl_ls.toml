@@ -1,0 +1,9 @@
+# VHDL-LS (VS Code "VHDL LS") library mapping; paths are relative to this file.
+# "work" in the sources means this library. VHDL-LS rejects "work" as a name here.
+standard = "2008"
+
+[libraries]
+uart_calc.files = [
+    "rtl/*.vhd",
+    "tb/*.vhd",
+]
