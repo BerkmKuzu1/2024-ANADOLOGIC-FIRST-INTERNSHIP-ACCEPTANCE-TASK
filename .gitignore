@@ -1,0 +1,10 @@
+# GHDL
+sim/ghdl/work/
+*.ghw
+
+# Questa / ModelSim
+sim/questa/work/
+sim/questa/transcript
+sim/questa/modelsim.ini
+*.wlf
+wlft*
