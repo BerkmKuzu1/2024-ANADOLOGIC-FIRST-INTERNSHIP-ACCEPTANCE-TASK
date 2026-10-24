@@ -1,8 +1,4 @@
-# UART Hesap Makinesi — AnadoLogic 2024 Staj Görevi
-
-AnadoLogic'in 2024 staj alımında verdiği görevin VHDL ile çözümü. Modül, UART'tan
-gelen 8 baytlık mesajdaki iki 16-bit sayıyı toplar ya da çıkarır ve sonucu 5
-baytlık bir cevap mesajıyla geri gönderir.
+# AnadoLogic 2024 Staj Görevi
 
 - Görev: [docs/task.md](docs/task.md) ([orijinal PDF](docs/berk_muammer_kuzu_task.pdf))
 - Dil: VHDL-2008
