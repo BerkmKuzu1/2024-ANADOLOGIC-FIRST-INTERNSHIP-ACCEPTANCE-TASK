@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <title>msg_tx durum makinesi: IDLE ve SEND, 5 baytlık cevap tamponu</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#15803d"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <text x="60" y="80" font-size="40" font-weight="700" fill="#0f172a"><tspan font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace">msg_tx</tspan> · sonuçtan cevap baytlarına</text>
+  <text x="60" y="120" font-size="22" fill="#475569">Kodda busy bayrağı ve idx sayacıyla yazıldı; davranışı iki durumlu bir FSM</text>
+  <!-- states -->
+  <rect x="270" y="330" width="300" height="120" rx="18" fill="#f1f5f9" stroke="#64748b" stroke-width="3"/>
+  <text x="420" y="386" font-size="30" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">IDLE</text>
+  <text x="420" y="416" font-size="18" fill="#475569" text-anchor="middle">busy = 0</text>
+  <rect x="930" y="330" width="300" height="120" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+  <text x="1080" y="386" font-size="30" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">SEND</text>
+  <text x="1080" y="416" font-size="18" fill="#475569" text-anchor="middle">busy = 1 · tx_valid_o = 1</text>
+  <!-- transitions -->
+  <circle cx="130" cy="390" r="11" fill="#0f172a"/>
+  <path d="M 142 390 L 268 390" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="199" y="374" font-size="20" fill="#475569" text-anchor="middle">rst</text>
+  <path d="M 470 330 C 560 220, 940 220, 1030 330" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="750" y="196" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">valid_i = 1</text>
+  <text x="750" y="222" font-size="18" fill="#475569" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">5 bayt tampona yazılır, idx = 0</text>
+  <path d="M 1030 450 C 940 560, 560 560, 470 450" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="750" y="578" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">tx_ready_i = 1 ve idx = 4</text>
+  <text x="750" y="604" font-size="18" fill="#475569" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">son bayt kabul edildi</text>
+  <path d="M 1230 360 C 1330 320, 1330 460, 1230 420" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="1342" y="380" font-size="20" fill="#0f172a" font-weight="700" text-anchor="start" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">tx_ready_i = 1</text>
+  <text x="1342" y="406" font-size="18" fill="#475569" text-anchor="start" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">sıradaki bayt, idx + 1</text>
+  <!-- buffer -->
+  <text x="270" y="676" font-size="20" fill="#475569">Tampon (buf) · örnek sonuç 0x0030</text>
+  <rect x="270" y="690" width="144" height="60" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="342" y="728.4" font-size="24" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">AB</text>
+  <rect x="420" y="690" width="144" height="60" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="492" y="728.4" font-size="24" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">CD</text>
+  <rect x="570" y="690" width="144" height="60" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="642" y="728.4" font-size="24" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">00</text>
+  <rect x="720" y="690" width="144" height="60" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="792" y="728.4" font-size="24" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">30</text>
+  <rect x="870" y="690" width="144" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="942" y="728.4" font-size="24" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">58</text>
+  <text x="342" y="778" font-size="17" fill="#475569" text-anchor="middle">header</text>
+  <text x="492" y="778" font-size="17" fill="#475569" text-anchor="middle">header</text>
+  <text x="642" y="778" font-size="17" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">result[15:8]</text>
+  <text x="792" y="778" font-size="17" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">result[7:0]</text>
+  <text x="942" y="778" font-size="17" fill="#475569" text-anchor="middle">checksum</text>
+  <text x="1040" y="728" font-size="22" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace">tx_data_o = buf(idx)</text>
+  <text x="1040" y="758" font-size="19" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace">idx: 0 → 4</text>
+  <text x="270" y="840" font-size="21" fill="#0f172a" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace">checksum: AB + CD + 00 + 30 = 1A8 → son 8 bit A8 → 100 − A8 = 58</text>
+</svg>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <title>uart_rx zamanlaması: 0x49 baytı alınırken hangi durumun ne zaman aktif olduğu</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#15803d"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <text x="60" y="80" font-size="40" font-weight="700" fill="#0f172a"><tspan font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace">uart_rx</tspan> · bir bayt boyunca</text>
+  <text x="60" y="120" font-size="22" fill="#475569">Örnek bayt 0x49 (0100 1001) · hatta LSB önce gider: start, 1 0 0 1 0 0 1 0, stop</text>
+  <!-- bit cells -->
+  <line x1="140" y1="330" x2="140" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="255" y1="330" x2="255" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="370" y1="330" x2="370" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="485" y1="330" x2="485" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="600" y1="330" x2="600" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="715" y1="330" x2="715" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="830" y1="330" x2="830" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="945" y1="330" x2="945" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="1060" y1="330" x2="1060" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="1175" y1="330" x2="1175" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="1290" y1="330" x2="1290" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="1405" y1="330" x2="1405" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="1520" y1="330" x2="1520" y2="470" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="197.5" y="500" font-size="18" fill="#475569" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">boşta</text>
+  <text x="312.5" y="500" font-size="18" fill="#475569" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">start</text>
+  <text x="312.5" y="342" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle">0</text>
+  <text x="427.5" y="500" font-size="18" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">d0</text>
+  <text x="427.5" y="342" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle">1</text>
+  <text x="542.5" y="500" font-size="18" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">d1</text>
+  <text x="542.5" y="342" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle">0</text>
+  <text x="657.5" y="500" font-size="18" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">d2</text>
+  <text x="657.5" y="342" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle">0</text>
+  <text x="772.5" y="500" font-size="18" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">d3</text>
+  <text x="772.5" y="342" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle">1</text>
+  <text x="887.5" y="500" font-size="18" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">d4</text>
+  <text x="887.5" y="342" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle">0</text>
+  <text x="1002.5" y="500" font-size="18" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">d5</text>
+  <text x="1002.5" y="342" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle">0</text>
+  <text x="1117.5" y="500" font-size="18" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">d6</text>
+  <text x="1117.5" y="342" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle">1</text>
+  <text x="1232.5" y="500" font-size="18" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">d7</text>
+  <text x="1232.5" y="342" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle">0</text>
+  <text x="1347.5" y="500" font-size="18" fill="#475569" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">stop</text>
+  <text x="1347.5" y="342" font-size="20" fill="#0f172a" font-weight="700" text-anchor="middle">1</text>
+  <text x="1462.5" y="500" font-size="18" fill="#475569" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">boşta</text>
+  <!-- waveform -->
+  <polyline points="140,360 140,360 255,360 255,440 370,440 370,360 485,360 485,440 600,440 600,440 715,440 715,360 830,360 830,440 945,440 945,440 1060,440 1060,360 1175,360 1175,440 1290,440 1290,360 1405,360 1405,360 1520,360" fill="none" stroke="#0f172a" stroke-width="4" stroke-linejoin="round"/>
+  <text x="124" y="367" font-size="18" fill="#475569" text-anchor="end">1</text>
+  <text x="124" y="447" font-size="18" fill="#475569" text-anchor="end">0</text>
+  <!-- sample points -->
+  <path d="M 312.5 352 V 474 M 312.5 510 V 568" stroke="#d97706" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="312.5" cy="440" r="8" fill="#d97706" stroke="#ffffff" stroke-width="2"/>
+  <path d="M 427.5 352 V 474 M 427.5 510 V 568" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="427.5" cy="360" r="8" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+  <path d="M 542.5 352 V 474 M 542.5 510 V 568" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="542.5" cy="440" r="8" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+  <path d="M 657.5 352 V 474 M 657.5 510 V 568" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="657.5" cy="440" r="8" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+  <path d="M 772.5 352 V 474 M 772.5 510 V 568" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="772.5" cy="360" r="8" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+  <path d="M 887.5 352 V 474 M 887.5 510 V 568" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="887.5" cy="440" r="8" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+  <path d="M 1002.5 352 V 474 M 1002.5 510 V 568" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="1002.5" cy="440" r="8" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+  <path d="M 1117.5 352 V 474 M 1117.5 510 V 568" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="1117.5" cy="360" r="8" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+  <path d="M 1232.5 352 V 474 M 1232.5 510 V 568" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="1232.5" cy="440" r="8" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+  <path d="M 1347.5 352 V 474 M 1347.5 510 V 568" stroke="#16a34a" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="1347.5" cy="360" r="8" fill="#16a34a" stroke="#ffffff" stroke-width="2"/>
+  <!-- durations -->
+  <path d="M 255 290 L 312.5 290 M 255 282 V 298 M 312.5 282 V 298" stroke="#334155" stroke-width="2"/>
+  <text x="283.75" y="272" font-size="18" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">yarım bit · 434 saat</text>
+  <path d="M 772.5 290 L 887.5 290 M 772.5 282 V 298 M 887.5 282 V 298" stroke="#334155" stroke-width="2"/>
+  <text x="830" y="272" font-size="18" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">1 bit · 868 saat</text>
+  <!-- state bar -->
+  <rect x="141" y="580" width="113" height="50" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+  <text x="197.5" y="611" font-size="17" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_IDLE</text>
+  <rect x="256" y="580" width="55.5" height="50" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="283.75" y="658" font-size="16" fill="#b45309" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_START</text>
+  <rect x="313.5" y="580" width="918" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="772.5" y="611" font-size="17" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_DATA</text>
+  <rect x="1233.5" y="580" width="113" height="50" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="1290" y="611" font-size="17" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_STOP</text>
+  <rect x="1348.5" y="580" width="170.5" height="50" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+  <text x="1433.75" y="611" font-size="17" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_IDLE</text>
+  <!-- legend -->
+  <rect x="140" y="714" width="22" height="22" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="172" y="730" font-size="19" fill="#475569">start kontrolü: hâlâ 0 ise S_DATA</text>
+  <rect x="560" y="714" width="22" height="22" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="592" y="730" font-size="19" fill="#475569">veri biti örneklenir, LSB önce shreg'e</text>
+  <rect x="1010" y="714" width="22" height="22" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="1042" y="730" font-size="19" fill="#475569">stop = 1 ise valid_o = 1, data_o = 0x49</text>
+  <text x="60" y="836" font-size="20" fill="#475569">Önce yarım bit beklenir, sonra her 868 saatte bir örnek alınır; her bit tam ortasından okunur.</text>
+</svg>

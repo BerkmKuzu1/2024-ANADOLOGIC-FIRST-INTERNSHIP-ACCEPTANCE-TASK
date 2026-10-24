@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <title>uart_rx durum makinesi: S_IDLE, S_START, S_DATA, S_STOP</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#15803d"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <text x="60" y="80" font-size="40" font-weight="700" fill="#0f172a"><tspan font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace">uart_rx</tspan> · bitten bayta</text>
+  <text x="60" y="120" font-size="22" fill="#475569">1 bit = 868 saat (100 MHz / 115200 baud) · FSM, iki flip-flop'tan geçen rx_sync sinyaline bakar</text>
+  <!-- states -->
+  <rect x="150" y="400" width="230" height="100" rx="18" fill="#f1f5f9" stroke="#64748b" stroke-width="3"/>
+  <text x="265" y="446" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_IDLE</text>
+  <text x="265" y="476" font-size="18" fill="#475569" text-anchor="middle">hat 1, bekle</text>
+  <rect x="533" y="400" width="230" height="100" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+  <text x="648" y="446" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_START</text>
+  <text x="648" y="476" font-size="18" fill="#475569" text-anchor="middle">yarım bit say</text>
+  <rect x="916" y="400" width="230" height="100" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="1031" y="446" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_DATA</text>
+  <text x="1031" y="476" font-size="18" fill="#475569" text-anchor="middle">8 bit örnekle</text>
+  <rect x="1299" y="400" width="230" height="100" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+  <text x="1414" y="446" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_STOP</text>
+  <text x="1414" y="476" font-size="18" fill="#475569" text-anchor="middle">stop bitine bak</text>
+  <!-- transitions -->
+  <circle cx="75" cy="450" r="11" fill="#0f172a"/>
+  <path d="M 87 450 L 148 450" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="111.5" y="434" font-size="20" fill="#475569" text-anchor="middle">rst</text>
+  <path d="M 382 450 L 531 450" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="456" y="432" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">rx_sync = 0</text>
+  <text x="456" y="482" font-size="17" fill="#475569" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">start biti</text>
+  <path d="M 765 450 L 914 450" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="839.5" y="408" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">yarım bitte</text>
+  <text x="839.5" y="434" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">rx_sync = 0</text>
+  <path d="M 1148 450 L 1297 450" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="1222.5" y="432" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">8 bit tamam</text>
+  <path d="M 996 400 C 966 300, 1096 300, 1066 400" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="1031" y="268" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">her 868 saatte 1 bit</text>
+  <text x="1031" y="294" font-size="18" fill="#475569" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">LSB önce shreg'e kaydırılır</text>
+  <path d="M 608 400 C 590 300, 323 300, 305 400" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="456" y="268" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">yarım bitte rx_sync = 1</text>
+  <text x="456" y="294" font-size="18" fill="#475569" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">gürültü, geri dön</text>
+  <path d="M 1414 500 C 1414 690, 265 690, 265 500" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="840" y="692" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">stop biti örneklendi</text>
+  <text x="840" y="718" font-size="20" fill="#15803d" font-weight="700" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">1 ise valid_o = 1, bayt hazır</text>
+  <text x="840" y="744" font-size="18" fill="#475569" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">0 ise bayt atılır</text>
+  <text x="60" y="846" font-size="20" fill="#475569">Önce yarım bit, sonra hep tam bit beklenir; böylece her bit tam ortasından örneklenir.</text>
+</svg>

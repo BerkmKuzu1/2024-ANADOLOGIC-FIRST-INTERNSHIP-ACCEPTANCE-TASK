@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <title>Veri yolu: rx_i, uart_rx, msg_rx, alu, msg_tx, uart_tx, tx_o</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#15803d"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <text x="60" y="80" font-size="40" font-weight="700" fill="#0f172a">Veri yolu</text>
+  <text x="60" y="120" font-size="22" fill="#475569">Bitler bayta, baytlar mesaja, mesaj sonuca, sonuç yeniden bitlere dönüşür</text>
+  <!-- top -->
+  <rect x="290" y="210" width="1170" height="530" rx="28" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="316" y="250" font-size="24" fill="#475569" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace">top</text>
+  <text x="316" y="718" font-size="18" fill="#475569">clk ve rst bütün modüllere gider</text>
+  <!-- blocks -->
+  <rect x="90" y="300" width="120" height="60" rx="12" fill="#ffffff" stroke="#64748b" stroke-width="3"/>
+  <text x="150" y="338.4" font-size="24" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">rx_i</text>
+  <rect x="90" y="590" width="120" height="60" rx="12" fill="#ffffff" stroke="#64748b" stroke-width="3"/>
+  <text x="150" y="628.4" font-size="24" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">tx_o</text>
+  <rect x="340" y="275" width="220" height="110" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="450" y="326" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">uart_rx</text>
+  <text x="450" y="356" font-size="18" fill="#475569" text-anchor="middle">bit → bayt</text>
+  <rect x="750" y="275" width="220" height="110" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="860" y="326" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">msg_rx</text>
+  <text x="860" y="356" font-size="18" fill="#475569" text-anchor="middle">bayt → mesaj</text>
+  <rect x="1180" y="290" width="220" height="370" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+  <text x="1290" y="471" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">alu</text>
+  <text x="1290" y="501" font-size="18" fill="#475569" text-anchor="middle">toplama / çıkarma</text>
+  <rect x="750" y="565" width="220" height="110" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+  <text x="860" y="616" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">msg_tx</text>
+  <text x="860" y="646" font-size="18" fill="#475569" text-anchor="middle">sonuç → 5 bayt</text>
+  <rect x="340" y="565" width="220" height="110" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/>
+  <text x="450" y="616" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">uart_tx</text>
+  <text x="450" y="646" font-size="18" fill="#475569" text-anchor="middle">bayt → bit</text>
+  <!-- signals -->
+  <path d="M 210 330 L 338 330" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="250" y="314" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">bit</text>
+  <path d="M 560 330 L 748 330" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="655" y="314" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">bayt</text>
+  <text x="655" y="358" font-size="16" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">data_o, valid_o</text>
+  <path d="M 970 330 L 1178 330" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="1075" y="314" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">num1, num2, opcode</text>
+  <text x="1075" y="358" font-size="16" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">valid_o</text>
+  <path d="M 1180 620 L 972 620" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="1075" y="604" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">result</text>
+  <text x="1075" y="648" font-size="16" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">valid_o</text>
+  <path d="M 750 620 L 562 620" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="655" y="604" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">bayt</text>
+  <text x="655" y="648" font-size="16" fill="#475569" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">valid / ready</text>
+  <path d="M 340 620 L 212 620" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="250" y="604" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">bit</text>
+  <!-- message formats -->
+  <text x="60" y="792" font-size="18" fill="#475569">Gelen mesaj · 8 bayt</text>
+  <rect x="60" y="804" width="64" height="46" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="92" y="833.65" font-size="19" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">BA</text>
+  <rect x="130" y="804" width="64" height="46" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="162" y="833.65" font-size="19" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">CD</text>
+  <rect x="200" y="804" width="134" height="46" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="267" y="833.65" font-size="19" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">num1</text>
+  <rect x="340" y="804" width="134" height="46" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="407" y="833.65" font-size="19" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">num2</text>
+  <rect x="480" y="804" width="64" height="46" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="512" y="833.65" font-size="19" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">op</text>
+  <rect x="550" y="804" width="64" height="46" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="582" y="833.65" font-size="19" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">chk</text>
+  <text x="760" y="792" font-size="18" fill="#475569">Cevap · 5 bayt</text>
+  <rect x="760" y="804" width="64" height="46" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="792" y="833.65" font-size="19" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">AB</text>
+  <rect x="830" y="804" width="64" height="46" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="862" y="833.65" font-size="19" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">CD</text>
+  <rect x="900" y="804" width="134" height="46" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="967" y="833.65" font-size="19" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">result</text>
+  <rect x="1040" y="804" width="64" height="46" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="1072" y="833.65" font-size="19" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">chk</text>
+</svg>

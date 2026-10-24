@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <title>msg_rx durum makinesi: header, num1, num2, opcode ve checksum durumları</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#15803d"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <text x="60" y="80" font-size="40" font-weight="700" fill="#0f172a"><tspan font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace">msg_rx</tspan> · bayttan mesaja</text>
+  <text x="60" y="120" font-size="22" fill="#475569">Her ok, uart_rx'ten yeni bayt geldiğinde (valid_i = 1) çalışır · her bayt sum'a eklenir (mod 256)</text>
+  <!-- states -->
+  <rect x="180" y="280" width="240" height="100" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+  <text x="300" y="326" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_HEADER_H</text>
+  <text x="300" y="356" font-size="18" fill="#475569" text-anchor="middle">0xBA bekle</text>
+  <rect x="540" y="280" width="240" height="100" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+  <text x="660" y="326" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_HEADER_L</text>
+  <text x="660" y="356" font-size="18" fill="#475569" text-anchor="middle">0xCD bekle</text>
+  <rect x="900" y="280" width="240" height="100" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="1020" y="326" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_NUM1_H</text>
+  <text x="1020" y="356" font-size="18" fill="#475569" text-anchor="middle">num1[15:8]</text>
+  <rect x="1260" y="280" width="240" height="100" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="1380" y="326" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_NUM1_L</text>
+  <text x="1380" y="356" font-size="18" fill="#475569" text-anchor="middle">num1[7:0]</text>
+  <rect x="1260" y="600" width="240" height="100" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="1380" y="646" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_NUM2_H</text>
+  <text x="1380" y="676" font-size="18" fill="#475569" text-anchor="middle">num2[15:8]</text>
+  <rect x="900" y="600" width="240" height="100" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="1020" y="646" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_NUM2_L</text>
+  <text x="1020" y="676" font-size="18" fill="#475569" text-anchor="middle">num2[7:0]</text>
+  <rect x="540" y="600" width="240" height="100" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="660" y="646" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_OPCODE</text>
+  <text x="660" y="676" font-size="18" fill="#475569" text-anchor="middle">opcode</text>
+  <rect x="180" y="600" width="240" height="100" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/>
+  <text x="300" y="646" font-size="26" fill="#0f172a" font-weight="700" font-family="Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', monospace" text-anchor="middle">S_CHECKSUM</text>
+  <text x="300" y="676" font-size="18" fill="#475569" text-anchor="middle">sum + bayt = 0 ?</text>
+  <!-- transitions -->
+  <circle cx="60" cy="305" r="11" fill="#0f172a"/>
+  <path d="M 72 305 L 178 305" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="119" y="289" font-size="20" fill="#475569" text-anchor="middle">rst</text>
+  <path d="M 270 280 C 240 190, 360 190, 330 280" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="300" y="192" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">0xBA değil</text>
+  <path d="M 630 280 C 600 190, 720 190, 690 280" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="660" y="192" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">yine 0xBA</text>
+  <path d="M 420 312 L 538 312" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="480" y="298" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">0xBA</text>
+  <path d="M 540 350 L 422 350" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="480" y="377" font-size="19" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">başka bayt</text>
+  <path d="M 780 330 L 898 330" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <text x="840" y="316" font-size="20" fill="#0f172a" text-anchor="middle" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">0xCD</text>
+  <path d="M 1140 330 L 1258 330" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <path d="M 1500 330 H 1550 V 650 H 1502" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <path d="M 1260 650 L 1142 650" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <path d="M 900 650 L 782 650" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <path d="M 540 650 L 422 650" fill="none" stroke="#334155" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+  <path d="M 180 650 H 110 V 355 H 178" fill="none" stroke="#15803d" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrow-ok)"/>
+  <text x="128" y="486" font-size="18" fill="#15803d" text-anchor="start" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">sum + bayt = 0 ise</text>
+  <text x="128" y="512" font-size="20" fill="#15803d" font-weight="700" text-anchor="start" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">valid_o = 1</text>
+  <text x="128" y="538" font-size="18" fill="#475569" text-anchor="start" stroke="#ffffff" stroke-width="8" stroke-linejoin="round" paint-order="stroke">değilse mesaj atılır</text>
+  <!-- legend -->
+  <rect x="60" y="824" width="22" height="22" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="92" y="840" font-size="19" fill="#475569">header arama</text>
+  <rect x="300" y="824" width="22" height="22" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="332" y="840" font-size="19" fill="#475569">alanları topla</text>
+  <rect x="540" y="824" width="22" height="22" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="572" y="840" font-size="19" fill="#475569">checksum kontrolü</text>
+</svg>

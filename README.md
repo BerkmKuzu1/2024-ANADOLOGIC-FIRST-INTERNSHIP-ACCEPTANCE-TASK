@@ -28,10 +28,7 @@
 
 ## Mimari
 
-```mermaid
-flowchart LR
-    rx_i --> uart_rx --> msg_rx --> alu --> msg_tx --> uart_tx --> tx_o
-```
+![Veri yolu](docs/img/datapath.svg)
 
 | Modül | Görev |
 | --- | --- |
@@ -42,6 +39,9 @@ flowchart LR
 | [`msg_tx`](rtl/msg_tx.vhd) | 5 baytlık cevabı checksum ile hazırlar |
 | [`uart_tx`](rtl/uart_tx.vhd) | 8N1 verici, `valid`/`ready` el sıkışması |
 | [`msg_pkg`](rtl/msg_pkg.vhd) | Header ve opcode sabitleri |
+
+Durum makinelerinin diyagramları ve örnek mesajın bayt bayt işlenişi:
+[docs/fsm.md](docs/fsm.md).
 
 `top` generic'leri `G_CLK_FREQ` (varsayılan 100 MHz) ve `G_BAUD_RATE` (varsayılan
 115200). Bir bit `G_CLK_FREQ / G_BAUD_RATE` = 868 saat sürer. Tasarım tek saat
@@ -112,6 +112,8 @@ dalga penceresine ekler. Questa 10.7c, Türkçe karakter içeren yollarda (örne
 2024-ANADOLOGIC-FIRST-INTERNSHIP-ACCEPTANCE-TASK/
 ├── docs/
 │   ├── task.md                      görev metni
+│   ├── fsm.md                       FSM diyagramları
+│   ├── img/                         FSM ve veri yolu görselleri (SVG)
 │   └── berk_muammer_kuzu_task.pdf   orijinal görev PDF'i
 ├── rtl/
 │   ├── msg_pkg.vhd
